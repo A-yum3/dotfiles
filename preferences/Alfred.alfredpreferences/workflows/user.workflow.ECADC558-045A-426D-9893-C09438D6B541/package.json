@@ -1,0 +1,75 @@
+{
+  "_from": "alfred-open-in-vscode",
+  "_id": "alfred-open-in-vscode@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-tNLOc4o02ufhE47y4YVJD1/lW9a7kQF32CSlx70HxEhxkPqg0rElJnjFXz592ky+1hEOSpZ3Av7IaAzAJ3F6WQ==",
+  "_location": "/alfred-open-in-vscode",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "alfred-open-in-vscode",
+    "name": "alfred-open-in-vscode",
+    "escapedName": "alfred-open-in-vscode",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/alfred-open-in-vscode/-/alfred-open-in-vscode-1.0.0.tgz",
+  "_shasum": "2e63323b45df7f9170938357c72fc839bef9fbca",
+  "_spec": "alfred-open-in-vscode",
+  "_where": "/Users/vivaxy/Developer/github/alfred-open-in-vscode",
+  "author": {
+    "name": "vivaxy",
+    "email": "xyxuye2007@126.com"
+  },
+  "bundleDependencies": false,
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "alfy": "^0.9.0",
+    "fast-glob": "^3.0.4"
+  },
+  "deprecated": false,
+  "description": "Alfred workflow to open in VSCode",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "standard-version": "^9.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+    "alfred",
+    "workflow",
+    "vscode",
+    "finder"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.{js,ts,css,less,json,md,html,yml,yaml,pcss,jsx,tsx}": [
+      "prettier --write"
+    ]
+  },
+  "main": "index.js",
+  "name": "alfred-open-in-vscode",
+  "scripts": {
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup",
+    "release": "standard-version && npm publish --access=public && git push --follow-tags"
+  },
+  "version": "1.0.0"
+}

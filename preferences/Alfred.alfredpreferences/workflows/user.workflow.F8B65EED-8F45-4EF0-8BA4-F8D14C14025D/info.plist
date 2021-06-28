@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.trilium.nikola.alfredworkflow.md5hasher</string>
+	<key>connections</key>
+	<dict>
+		<key>1788EA90-241B-484D-926B-C5C6B6AE7CE5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>884D410B-E2C9-4A30-9B66-BFC5B51945C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F93FC2C4-F41E-4204-8871-8B339117B3E9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>884D410B-E2C9-4A30-9B66-BFC5B51945C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Nikola Rožić</string>
+	<key>description</key>
+	<string>Generates md5 hashed password for .htpasswd files</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>MD5 Hasher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>md5</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Generating password...</string>
+				<key>script</key>
+				<string>// Load the PHP workflow library.
+include_once("workflows.php");
+ 
+// Create the workflow object to use.
+$wf = new Workflows();
+
+$query = "{query}";
+$pass = md5($query);
+
+$wf-&gt;result('0', $pass, 'Your password is:', $pass, 'icon.png', 'yes');
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Returns MD5 hashed string</string>
+				<key>title</key>
+				<string>Enter password</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F93FC2C4-F41E-4204-8871-8B339117B3E9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Your password is: {query}</string>
+				<key>title</key>
+				<string>Password copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A70A4E1E-712E-4575-967A-0AA64960904D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>htpass</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Generating htpasswd user entry</string>
+				<key>script</key>
+				<string>// Load the PHP workflow library.
+include_once("workflows.php");
+ 
+// Create the workflow object to use.
+$wf = new Workflows();
+
+$query = explode(" ", "{query}");
+$password = crypt($query[1], base64_encode($query[1]));;
+$string = $query[0] . ":" . $password;
+
+$wf-&gt;result('0', $string, 'Your password is:', $string, 'icon.png', 'yes');
+
+echo $wf-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>Separated by space (example: username password)</string>
+				<key>title</key>
+				<string>Enter username and password</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>1788EA90-241B-484D-926B-C5C6B6AE7CE5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>884D410B-E2C9-4A30-9B66-BFC5B51945C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1788EA90-241B-484D-926B-C5C6B6AE7CE5</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>884D410B-E2C9-4A30-9B66-BFC5B51945C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>A70A4E1E-712E-4575-967A-0AA64960904D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>F93FC2C4-F41E-4204-8871-8B339117B3E9</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://trilium.io</string>
+</dict>
+</plist>

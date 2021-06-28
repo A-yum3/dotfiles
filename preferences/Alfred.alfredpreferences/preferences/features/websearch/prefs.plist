@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>094BB70B-43BD-4B30-B2ED-92522A0F83BE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>qi</string>
+			<key>text</key>
+			<string>Qiita</string>
+			<key>url</key>
+			<string>http://qiita.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>715B80EF-F490-456C-ADED-9B9B9ACB4330</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ze</string>
+			<key>text</key>
+			<string>zenn</string>
+			<key>url</key>
+			<string>https://zenn.dev/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>8DCEB24B-7F36-46BE-BEC2-E27D923C1830</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tera</string>
+			<key>text</key>
+			<string>teratail</string>
+			<key>url</key>
+			<string>https://teratail.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>onlyShowEnabledInPrefs</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>MD5 hasher</name>
+  <version>1.0.1</version>
+  <bundle>io.trilium.nikola.alfredworkflow.md5hasher</bundle>
+  <updated>1441878372</updated>
+  <file>md5_hasher.alfredworkflow</file>
+</workflow>

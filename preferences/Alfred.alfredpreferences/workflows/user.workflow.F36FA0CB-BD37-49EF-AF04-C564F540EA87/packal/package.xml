@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Qiita Search</name>
+  <version>1.0</version>
+  <bundle>com.xyyolab.www.qiitasearch</bundle>
+  <updated>1572876682</updated>
+  <file>qiita_search.alfredworkflow</file>
+</workflow>
