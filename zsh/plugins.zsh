@@ -24,6 +24,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # 補完
 zinit light zsh-users/zsh-autosuggestions
+zinit light marlonrichert/zsh-autocomplete
+
+# laravel artisan補完
+zinit light jessarcher/zsh-artisan
 
 # シンタックスハイライト
 zinit light zdharma/fast-syntax-highlighting
