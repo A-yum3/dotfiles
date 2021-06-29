@@ -26,6 +26,9 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit light marlonrichert/zsh-autocomplete
 
+# リモートのgitをopenで開く
+zinit light paulirish/git-open
+
 # laravel artisan補完
 zinit light jessarcher/zsh-artisan
 
