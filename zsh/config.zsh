@@ -172,7 +172,7 @@ zinit snippet PZT::modules/helper/init.zsh
 # zinit snippet OMZP::git # <- なんかおまじないらしい
 # zinit cdclear -q
 
-# # プロンプトのカスタマイズ
+# プロンプトのカスタマイズ
 # setopt promptsubst
 # zinit snippet OMZT::gnzh
 
