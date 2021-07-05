@@ -16,18 +16,16 @@ zinit light drgr33n/oh-my-zsh_aws2-plugin
 # anyframeのセットアップ
 zinit light mollifier/anyframe
 
-# クローンしたGit作業ディレクトリで、コマンド `git open` を実行するとブラウザでGitHubが開く
-zinit light paulirish/git-open
+# # クローンしたGit作業ディレクトリで、コマンド `git open` を実行するとブラウザでGitHubが開く
+# zinit light paulirish/git-open
 
-# powerlevel10k plugin
+# powerlevel10k zshのテーマ
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # 補完
+zinit ice wait'0'; zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
 zinit light zsh-users/zsh-autosuggestions
-zinit light marlonrichert/zsh-autocomplete
-
-# リモートのgitをopenで開く
-zinit light paulirish/git-open
 
 # laravel artisan補完
 zinit light jessarcher/zsh-artisan
@@ -45,3 +43,6 @@ zinit light sharkdp/bat
 if builtin command -v bat > /dev/null; then
   alias cat="bat"
 fi
+
+# iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
+zinit light gimbo/iterm2-tabs.zsh

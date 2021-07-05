@@ -114,8 +114,12 @@ autoload -Uz colors; colors
 # Tabで選択できるように
 zstyle ':completion:*:default' menu select=2
 
-# 補完で大文字にもマッチ
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# 補完候補をそのまま→小文字を大文字→大文字を小文字に変更
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
+
+### 補完方法毎にグループ化する。
+zstyle ':completion:*' format '%B%F{blue}%d%f%b'
+zstyle ':completion:*' group-name ''
 
 # ファイル補完候補に色を付ける
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -163,18 +167,14 @@ bindkey "^N" history-beginning-search-forward-end
 # Preztoのセットアップ
 zinit snippet PZT::modules/helper/init.zsh
 
-# oh-my-zshのセットアップ
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git # <- なんかおまじないらしい
-zinit cdclear -q
+# # oh-my-zshのセットアップ
+# zinit snippet OMZL::git.zsh
+# zinit snippet OMZP::git # <- なんかおまじないらしい
+# zinit cdclear -q
 
-# プロンプトのカスタマイズ
-setopt promptsubst
-zinit snippet OMZT::gnzh
-
-
-# iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
-zinit light gimbo/iterm2-tabs.zsh
+# # プロンプトのカスタマイズ
+# setopt promptsubst
+# zinit snippet OMZT::gnzh
 
 # Ctrl+x -> b
 # peco でディレクトリの移動履歴を表示
