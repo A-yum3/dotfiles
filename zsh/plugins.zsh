@@ -23,10 +23,10 @@ zinit light mollifier/anyframe
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # 補完
-zinit ice wait'0'; zinit light zsh-users/zsh-completions
-autoload -Uz compinit && compinit
-zinit light zsh-users/zsh-autosuggestions
-# zinit light marlonrichert/zsh-autocomplete
+# zinit ice wait'0'; zinit light zsh-users/zsh-completions
+# autoload -Uz compinit && compinit
+# zinit light zsh-users/zsh-autosuggestions
+zinit light marlonrichert/zsh-autocomplete
 
 # laravel artisan補完
 zinit light jessarcher/zsh-artisan
@@ -47,3 +47,6 @@ fi
 
 # iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
 zinit light gimbo/iterm2-tabs.zsh
+
+# zの導入
+zinit load agkozak/zsh-z

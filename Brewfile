@@ -23,7 +23,6 @@ brew "git"
 brew "jq"
 brew "lazydocker"
 brew "mas"
-brew "mysql-client@5.7"
 brew "nginx", restart_service: true
 brew "node"
 brew "nodenv"

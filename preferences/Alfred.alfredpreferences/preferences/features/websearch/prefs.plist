@@ -4,23 +4,36 @@
 <dict>
 	<key>customSites</key>
 	<dict>
-		<key>094BB70B-43BD-4B30-B2ED-92522A0F83BE</key>
+		<key>0BF0C0B0-90DA-430B-968E-A3A48801301C</key>
 		<dict>
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>qi</string>
+			<string>cas</string>
 			<key>text</key>
-			<string>Qiita</string>
+			<string>Carbon Document</string>
 			<key>url</key>
-			<string>http://qiita.com/search?q={query}</string>
+			<string>https://carbon.nesbot.com/docs/</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>37A7736D-8044-498B-942D-67C678B84BED</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>lds</string>
+			<key>text</key>
+			<string>Laravel Document Japanese</string>
+			<key>url</key>
+			<string>https://search.readouble.com/?query=8.x+{query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
 		<key>715B80EF-F490-456C-ADED-9B9B9ACB4330</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>ze</string>
 			<key>text</key>
@@ -33,13 +46,65 @@
 		<key>8DCEB24B-7F36-46BE-BEC2-E27D923C1830</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>tera</string>
 			<key>text</key>
 			<string>teratail</string>
 			<key>url</key>
 			<string>https://teratail.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>97A63362-816F-49EF-A8E2-3E19E8539096</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>las</string>
+			<key>text</key>
+			<string>Laravel API Document</string>
+			<key>url</key>
+			<string>https://laravel.com/api/8.x/search.html?search={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>9C494CEA-E37C-4F54-B4C7-FAE8FA32A009</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pus</string>
+			<key>text</key>
+			<string>PHPUnit</string>
+			<key>url</key>
+			<string>https://phpunit.readthedocs.io/ja/latest/search.html?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>A58AB9E4-8C4B-4B5B-B315-F2517BC89FDD</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pds</string>
+			<key>text</key>
+			<string>PHP Document</string>
+			<key>url</key>
+			<string>https://www.php.net/results.php?q={query}&amp;l=ja&amp;p=all</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>C433A33D-4186-4568-97D1-803EBF3DF6E7</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sonis</string>
+			<key>text</key>
+			<string>Sonipedia</string>
+			<key>url</key>
+			<string>https://sites.google.com/search/sonicmoov.com/sonipedia2?query={query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
