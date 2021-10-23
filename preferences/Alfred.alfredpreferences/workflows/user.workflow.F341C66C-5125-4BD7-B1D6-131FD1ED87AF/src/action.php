@@ -130,7 +130,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
 
     if ($track_uri != '') {
 
-        if ($add_to_option != '') {
+        if ($add_to_option == 'ADDTOPLAYLIST') {
             $tmp = explode(':', $track_uri);
             if ($tmp[1] == 'local') {
                 // local track, look it up online
@@ -153,6 +153,31 @@ if ($type == 'TRACK' && $other_settings == '' &&
                 }
             }
             exec("osascript -e 'tell application id \"".getAlfredName()."\" to search \"".getenv('c_spot_mini').' Add▹'.$track_uri.'∙'.escapeQuery($track_name).'▹'."\"'");
+
+            return;
+        } elseif ($add_to_option == 'REMOVEFROMPLAYLIST') {
+            $tmp = explode(':', $track_uri);
+            if ($tmp[1] == 'local') {
+                // local track, look it up online
+                $query = 'track:' . $track_name . ' artist:' . $artist_name;
+                $results = searchWebApi($w, $country_code, $query, 'track', 1);
+
+                if (is_array($results) && !empty($results)) {
+                    // only one track returned
+                    $track = $results[0];
+                    $artists = $track->artists;
+                    $artist = $artists[0];
+                    logMsg($w, "Error(action): Unknown track $track_uri / $track_name / $artist_name replaced by track: $track->uri / $track->name / $artist->name");
+                    $track_uri = $track->uri;
+                    $tmp = explode(':', $track_uri);
+                } else {
+                    logMsg($w, "Error(action): Could not find track: $track_uri / $track_name / $artist_name");
+                    displayNotificationWithArtwork($w, 'Local track ' . $track_name . ' has not online match', './images/warning.png', 'Error!');
+
+                    return;
+                }
+            }
+            exec("osascript -e 'tell application id \"" . getAlfredName() . "\" to search \"" . getenv('c_spot_mini') . ' Remove▹' . $track_uri . '∙' . escapeQuery($track_name) . '▹' . "\"'");
 
             return;
         } elseif ($playlist_uri != '') {
@@ -861,7 +886,7 @@ if ($type == 'TRACK' && $other_settings == '' &&
     } elseif ($other_action == 'enable_podcasts_settings') {
         $ret = updateSetting($w, 'podcasts_enabled', 1);
         return;
-    } elseif ($other_action == 'disable_podcasts_settingss') {
+    } elseif ($other_action == 'disable_podcasts_settings') {
         $ret = updateSetting($w, 'podcasts_enabled', 0);
         return;
     } elseif ($other_action == 'enable_display_rating') {
@@ -953,6 +978,38 @@ if ($type == 'TRACK' && $other_settings == '' &&
             displayNotificationWithArtwork($w, 'Error while updating settings', './images/settings.png', 'Error!');
         }
 
+        return;
+    } elseif ($other_action == 'fix_permissions') {
+        logMsg($w, "Info(fix_permissions) is called");
+        // check for quarantine and remove it if required
+        exec('/usr/bin/xattr ./fzf', $response);
+        foreach ($response as $line) {
+            if (strpos($line, 'com.apple.quarantine') !== false) {
+                logMsg($w, "Info(fix_permissions) for fzf");
+                exec('/usr/bin/xattr -d com.apple.quarantine ./fzf', $response);
+                break;
+            }
+        }
+
+        // check for quarantine and remove it if required
+        exec('/usr/bin/xattr ./terminal-notifier.app', $response);
+        foreach ($response as $line) {
+            if (strpos($line, 'com.apple.quarantine') !== false) {
+                logMsg($w, "Info(fix_permissions) for terminal-notifier");
+                exec('/usr/bin/xattr -d com.apple.quarantine ./terminal-notifier.app', $response);
+                break;
+            }
+        }
+
+        exec('/usr/bin/xattr "' . './App/' . $theme_color . '/Spotify Mini Player.app' . '"', $response);
+        foreach ($response as $line) {
+            if (strpos($line, 'com.apple.quarantine') !== false) {
+                logMsg($w, "Info(fix_permissions) for Spotify Mini Player");
+                exec('/usr/bin/xattr -d com.apple.quarantine "' . './App/' . $theme_color . '/Spotify Mini Player.app' . '"', $response);
+                break;
+            }
+        }
+        displayNotificationWithArtwork($w, 'Done', './images/debug.png', 'Fix permissions');
         return;
     } elseif ($other_action == 'enable_fuzzy_search') {
         // check for quarantine and remove it if required

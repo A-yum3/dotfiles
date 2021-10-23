@@ -1504,7 +1504,7 @@ function firstDelimiterSpotifyConnect($w, $query, $db, $update_in_progress) {
                 exit;
             }
             else {
-                if ($e->getCode() == 404) {
+                if ($e->getCode() == 404 || $e->getCode() == 403) {
                     $retry = false;
                     $w->result(null, 'help', 'Exception occurred', array('' . $e->getMessage(), 'alt' => '', 'cmd' => '', 'shift' => '', 'fn' => '', 'ctrl' => '',), './images/warning.png', 'no', null, '');
                     echo $w->tojson();
@@ -1657,7 +1657,7 @@ function firstDelimiterSpotifyConnectPreferredDevice($w, $query, $db, $update_in
                 exit;
             }
             else {
-                if ($e->getCode() == 404) {
+                if ($e->getCode() == 404 || $e->getCode() == 403) {
                     $retry = false;
                     $w->result(null, 'help', 'Exception occurred', array('' . $e->getMessage(), 'alt' => '', 'cmd' => '', 'shift' => '', 'fn' => '', 'ctrl' => '',), './images/warning.png', 'no', null, '');
                     echo $w->tojson();
@@ -1788,7 +1788,7 @@ function firstDelimiterYourMusic($w, $query, $db, $update_in_progress) {
                 /* other_settings*/, ''
                 /* other_action */, $track[7] /* artist_name */, $track[5] /* track_name */, $track[6] /* album_name */, $track[9] /* track_artwork_path */, $track[10] /* artist_artwork_path */, $track[11] /* album_artwork_path */, ''
                 /* playlist_name */, '', /* playlist_artwork_path */
-                )), $track[7] . ' '.getenv('emoji_separator').' ' . $track[5], $arrayresult = array($track[16] . ' '.getenv('emoji_separator').' ' . $subtitle . getPlaylistsForTrack($db, $track[2]), 'alt' => 'Play album ' . $track[6] . ' in Spotify', 'cmd' => 'Play artist ' . $track[7] . ' in Spotify', 'fn' => 'Add track ' . $track[5] . ' to ...', 'shift' => 'Add album ' . $track[6] . ' to ...', 'ctrl' => 'Search artist ' . $track[7] . ' online',), $track[9], 'yes', array('copy' => $track[7] . ' '.getenv('emoji_separator').' ' . $track[5], 'largetype' => $track[7] . ' '.getenv('emoji_separator').' ' . $track[5],), '');
+                )), $track[7] . ' '.getenv('emoji_separator').' ' . $track[5], array($track[16] . ' '.getenv('emoji_separator').' ' . $subtitle . getPlaylistsForTrack($db, $track[2]), 'alt' => 'Play album ' . $track[6] . ' in Spotify', 'cmd' => 'Play artist ' . $track[7] . ' in Spotify', 'fn' => 'Add track ' . $track[5] . ' to ...', 'shift' => 'Add album ' . $track[6] . ' to ...', 'ctrl' => 'Search artist ' . $track[7] . ' online',), $track[9], 'yes', array('copy' => $track[7] . ' '.getenv('emoji_separator').' ' . $track[5], 'largetype' => $track[7] . ' '.getenv('emoji_separator').' ' . $track[5],), '');
             }
         }
 

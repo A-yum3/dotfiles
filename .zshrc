@@ -36,3 +36,4 @@ source $SCRIPT_DIR/zsh/alias.zsh
 source $SCRIPT_DIR/zsh/path.zsh
 source $SCRIPT_DIR/zsh/config.zsh
 source $SCRIPT_DIR/zsh/p10k.zsh
+source $SCRIPT_DIR/zsh/function.zsh

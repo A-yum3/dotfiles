@@ -30,6 +30,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>538A9F08-FFA1-40A3-8ED4-A682F03FAADE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tera</string>
+			<key>text</key>
+			<string>Teratail</string>
+			<key>url</key>
+			<string>https://teratail.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>715B80EF-F490-456C-ADED-9B9B9ACB4330</key>
 		<dict>
 			<key>enabled</key>
@@ -95,6 +108,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>BE56E01F-39C8-4FE2-BB8E-54E2805F6369</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>larac</string>
+			<key>text</key>
+			<string>Laravel cheetsheet</string>
+			<key>url</key>
+			<string>https://dev.to/ericchapman/my-beloved-laravel-cheat-sheet-3l73</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>C433A33D-4186-4568-97D1-803EBF3DF6E7</key>
 		<dict>
 			<key>enabled</key>
@@ -105,6 +131,19 @@
 			<string>Sonipedia</string>
 			<key>url</key>
 			<string>https://sites.google.com/search/sonicmoov.com/sonipedia2?query={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>F10D549C-7D5D-44E8-999B-1330FB74F107</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>arc</string>
+			<key>text</key>
+			<string>artisan cheetsheet</string>
+			<key>url</key>
+			<string>https://artisan.page/</string>
 			<key>utf8</key>
 			<true/>
 		</dict>

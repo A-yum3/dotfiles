@@ -56,9 +56,9 @@
     anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
     goenv                   # go environment (https://github.com/syndbg/goenv)
-    nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
-    nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
-    nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
+    # nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
+    # nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
+    # nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     # node_version          # node.js version
     # go_version            # go version (https://golang.org)
     # rust_version          # rustc version (https://www.rust-lang.org)
@@ -91,24 +91,24 @@
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
+    # vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
-    load                  # CPU load
-    disk_usage            # disk usage
-    ram                   # free RAM
+    # load                  # CPU load
+    # disk_usage            # disk usage
+    # ram                   # free RAM
     # swap                  # used swap
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
-    timewarrior             # timewarrior tracking status (https://timewarrior.net/)
-    taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
-    time                    # current time
+    # timewarrior             # timewarrior tracking status (https://timewarrior.net/)
+    # taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    # time                    # current time
     # =========================[ Line #2 ]=========================
     newline
-    ip                    # ip address and bandwidth usage for a specified network interface
+    # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
     # wifi                  # wifi speed
-    # example               # example user-defined segment (see prompt_example function below)
+    example               # example user-defined segment (see prompt_example function below)
   )
 
   # Defines character set used by powerlevel10k. It's best to let `p10k configure` set it for you.
@@ -211,7 +211,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Current directory background color.
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#4d52ff'
   # Default current directory foreground color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
   # If directory is too long, shorten some of its segments to the shortest possible unique
@@ -1642,7 +1642,7 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
-    p10k segment -b 1 -f 3 -i '⭐' -t 'hello, %n'
+    p10k segment -b 'blue' -f 'red' -i `git config user.name`
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
@@ -1665,9 +1665,9 @@
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
-  typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=3
-  typeset -g POWERLEVEL9K_EXAMPLE_BACKGROUND=1
-  # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+  typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND='#ffffff'
+  typeset -g POWERLEVEL9K_EXAMPLE_BACKGROUND='#4d52ff'
+  # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='😎'
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:

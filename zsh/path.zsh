@@ -8,3 +8,4 @@ set PATH /Users/y.ueyama/Library/Android/sdk/platform-tools:$PATH
 
 set PATH /usr/local/opt/ruby/bin:$PATH
 export PATH=/Users/y.ueyama/.kusanagi/bin:$PATH
+export PATH=/Users/y.ueyama/Library/Android/sdk/platform-tools:$PATH
