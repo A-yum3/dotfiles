@@ -1,9 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "\/Users\/y.ueyama\/.composer\/vendor\/bin\/phpcs",
-    "dontautoexpand" : true,
-    "uid" : "5E392589-0E2E-4BA8-BD84-BF89EB80AFF5",
-    "name" : "phpcs-path",
-    "keyword" : "pcs"
-  }
-}

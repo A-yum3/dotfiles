@@ -1,9 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "<?php\nuse PHPUnit\\Framework\\TestCase;\n\nclass SampleTest extends TestCase\n{\n    \/**\n     * @group 100A\n     * @dataProvider DataA\n     *\/\n    public function testA($expected, $a, $b)\n    {\n        $result = $this->solveA($a, $b);\n        $this->assertSame($expected, $result);\n    }\n\n    \/**\n     * @return Generator\n     *\/\n    public function DataA(): Generator\n    {\n        \/\/ yield \"0\" => [\"出力\", \"入力1\", \"入力2\"];\n        yield \"1\" => [{cursor}, {cursor}, b];\n        yield \"2\" => [rel, a, b];\n    }\n\n\n    private function solveA($a, $b): mixed\n    {\n        return\n    }\n}",
-    "dontautoexpand" : true,
-    "uid" : "9225FABC-EE54-4BA2-B43F-E581C0FA5FA8",
-    "name" : "php_atcoder_template",
-    "keyword" : "pat"
-  }
-}

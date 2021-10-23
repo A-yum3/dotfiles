@@ -1,9 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "\/Users\/y.ueyama\/.composer\/vendor\/bin\/phpstan",
-    "dontautoexpand" : true,
-    "uid" : "2ACEC9A5-7A05-4D0B-A11E-195F38B6B894",
-    "name" : "phpstan–path",
-    "keyword" : "pstan"
-  }
-}
