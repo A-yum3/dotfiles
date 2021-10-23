@@ -1642,7 +1642,7 @@
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
-    p10k segment -b 'blue' -f 'red' -i `git config user.name`
+    p10k segment -t `git config --global user.name`
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
