@@ -3,7 +3,7 @@
 zinit light reegnz/jq-zsh-plugin
 
 # Gitの変更状態がわかる ls。ls の代わりにコマンド `k` を実行するだけ。
-zinit light supercrabtree/k
+# zinit light supercrabtree/k
 
 # AWS CLI v2の補完。
 # 要 AWS CLI v2
@@ -29,10 +29,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light marlonrichert/zsh-autocomplete
 
 # laravel artisan補完
-zinit light jessarcher/zsh-artisan
+# zinit light jessarcher/zsh-artisan
 
 # シンタックスハイライト
-zinit light zdharma/fast-syntax-highlighting
+# zinit light zdharma/fast-syntax-highlighting
 
 # Ctrl+r でコマンド履歴を検索
 zinit light zdharma/history-search-multi-word
