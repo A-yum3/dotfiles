@@ -31,7 +31,7 @@ truncation_symbol = ""
 
 [git_status]
 conflicted = "🏳"
-ahead = "🏎💨 ${count}"
+ahead = "🏎💨"
 behind = "😰"
 diverged = "😵"
 up_to_date = "✅"
