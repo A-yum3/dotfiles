@@ -1,3 +1,11 @@
+
+# Plugin history-search-multi-word loaded with investigating.
+zinit load zdharma-continuum/history-search-multi-word
+
+# Two regular plugins loaded without investigating.
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+
 # jq をインタラクティブに使える。JSONを標準出力に出すコマンドを入力した状態で `Alt+j` すると jq のクエリが書ける。
 # 要 jq
 zinit light reegnz/jq-zsh-plugin
@@ -19,31 +27,13 @@ zinit light mollifier/anyframe
 # クローンしたGit作業ディレクトリで、コマンド `git open` を実行するとブラウザでGitHubが開く
 # zinit light paulirish/git-open
 
-# powerlevel10k zshのテーマ
-zinit ice depth=1; zinit light romkatv/powerlevel10k
-
 # 補完
 # zinit ice wait'0'; zinit light zsh-users/zsh-completions
 # autoload -Uz compinit && compinit
-# zinit light zsh-users/zsh-autosuggestions
 zinit light marlonrichert/zsh-autocomplete
-
-# laravel artisan補完
-# zinit light jessarcher/zsh-artisan
-
-# シンタックスハイライト
-# zinit light zdharma/fast-syntax-highlighting
-
-# Ctrl+r でコマンド履歴を検索
-zinit light zdharma/history-search-multi-word
 
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
-
-# 以下はただのエイリアス設定
-if builtin command -v bat > /dev/null; then
-  alias cat="bat"
-fi
 
 # iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
 zinit light gimbo/iterm2-tabs.zsh

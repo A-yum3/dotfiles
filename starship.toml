@@ -1,0 +1,34 @@
+# カスタムフォーマットを利用します
+# format = ""
+
+scan_timeout = 10
+
+
+# "❯" 記号を "➜" 記号に置き換えます
+[character]                            # 設定しようとしているモジュールの名前は "character" です。
+success_symbol = "[➜](bold green)"     # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
+
+# packageモジュールを無効にし、プロンプトから完全に隠します
+[package]
+disabled = true
+
+# starshipが現在のディレクトリ下のファイルをチェックするまで10ミリ秒待ちます
+scan_timeout = 10
+
+[directory]
+#ディレクトリ表示
+truncation_length = 10
+truncate_to_repo = false
+
+[git_status]
+
+[[battery.display]]
+#バッテリーを表示するタイミング、表示する際の文字のスタイル
+threshold = 100
+style = "bold blue"
+
+[battery]
+#バッテリーの各状態のアイコン、上からフル充電、充電中、バッテリー残量低下
+full_symbol = "🤗"
+charging_symbol = "😌"
+discharging_symbol = "😨"
