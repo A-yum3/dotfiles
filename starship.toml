@@ -3,32 +3,41 @@
 
 scan_timeout = 10
 
-
-# "❯" 記号を "➜" 記号に置き換えます
-[character]                            # 設定しようとしているモジュールの名前は "character" です。
-success_symbol = "[➜](bold green)"     # "success_symbol" セグメントが「太字の緑色」スタイルの "➜" に設定されています
-
-# packageモジュールを無効にし、プロンプトから完全に隠します
-[package]
+[aws]
 disabled = true
 
-# starshipが現在のディレクトリ下のファイルをチェックするまで10ミリ秒待ちます
-scan_timeout = 10
-
-[directory]
-#ディレクトリ表示
-truncation_length = 10
-truncate_to_repo = false
-
-[git_status]
+[battery]
 
 [[battery.display]]
-#バッテリーを表示するタイミング、表示する際の文字のスタイル
-threshold = 100
-style = "bold blue"
+threshold = 10
+style = "bold red"
 
-[battery]
-#バッテリーの各状態のアイコン、上からフル充電、充電中、バッテリー残量低下
-full_symbol = "🤗"
-charging_symbol = "😌"
-discharging_symbol = "😨"
+[character]
+success_symbol = "[👍]()"
+error_symbol = "[👎]()"
+
+[directory]
+truncation_length = 10
+truncation_symbol = "~/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold) "
+
+[git_branch]
+always_show_remote = true
+symbol = "🌱 "
+style = "bold green"
+truncation_symbol = ""
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "🆕"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
