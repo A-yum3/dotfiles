@@ -1,6 +1,6 @@
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
 zinit for \
-    light-mode  zsh-users/zsh-autosuggestions \
     light-mode  zdharma-continuum/fast-syntax-highlighting \
                 zdharma-continuum/history-search-multi-word
 
@@ -20,14 +20,16 @@ zinit light drgr33n/oh-my-zsh_aws2-plugin
 zinit light mollifier/anyframe
 
 # 補完
-# zinit ice wait'0'; zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-completions
+
 zinit light marlonrichert/zsh-autocomplete
 
 zinit ice as"program" from"gh-r" mv"bat* -> bat" pick"bat/bat"
 zinit light sharkdp/bat
 
-# iTerm2を使っている場合に、コマンド `tt タブ名` でタブ名を変更できる
-zinit light gimbo/iterm2-tabs.zsh
 
 # zの導入
 zinit load agkozak/zsh-z
+
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
