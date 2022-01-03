@@ -41,3 +41,9 @@ modified = "📝"
 staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
+
+[memory_usage]
+format = "$symbol [Warning!](bold red) [${ram_pct}](bold yellow) | [${swap_pct}](bol dimmied white)"
+symbol = "🚨"
+threshold = 90
+disabled = false
