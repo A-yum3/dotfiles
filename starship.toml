@@ -1,0 +1,49 @@
+# カスタムフォーマットを利用します
+# format = ""
+
+scan_timeout = 10
+
+[aws]
+disabled = true
+
+[battery]
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[character]
+success_symbol = "[👍]()"
+error_symbol = "[👎]()"
+
+[directory]
+truncation_length = 10
+truncation_symbol = "~/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold) "
+
+[git_branch]
+always_show_remote = true
+symbol = "🌱 "
+style = "bold green"
+truncation_symbol = ""
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "✅"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[memory_usage]
+format = "$symbol [Warning!](bold red) [${ram_pct}](bold yellow) | [${swap_pct}](bol dimmied white)"
+symbol = "🚨"
+threshold = 90
+disabled = false
