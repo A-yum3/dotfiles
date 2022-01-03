@@ -21,6 +21,11 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+zinit light zsh-users/zsh-completions
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zdharma-continuum/history-search-multi-word
+zinit light agkozak/zsh-z
+
 # Snippet
 zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 
