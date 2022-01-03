@@ -20,11 +20,6 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
-# Self update
-# zinit self-update
-
-# Plugin parallel update
-# zinit update --parallel
 
 # Snippet
 zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
