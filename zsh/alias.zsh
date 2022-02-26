@@ -11,6 +11,9 @@ alias doc='docker compose'
 alias c='clear'
 alias ls='exa'
 alias b='bat'
+alias att='atcoder-tools test'
+alias atg='atcoder-tools gen'
+alias ats='atcoder-tools submit'
 
 # 以下はただのエイリアス設定
 if builtin command -v bat > /dev/null; then
