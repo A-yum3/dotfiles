@@ -8,5 +8,6 @@ set PATH /Users/y.ueyama/Library/Android/sdk/platform-tools:$PATH
 
 set PATH /usr/local/opt/ruby/bin:$PATH
 export PATH=/Users/y.ueyama/Library/Android/sdk/platform-tools:$PATH
+export PATH=/usr/local/bin/ngrok:$PATH
 
 export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
