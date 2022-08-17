@@ -820,7 +820,12 @@
               "keyboard_types": ["jis"]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "description": "caps_lock and kana to delete_or_backspace",
+      "manipulators": [
         {
           "description": "return = delete_or_backspace",
           "type": "basic",
