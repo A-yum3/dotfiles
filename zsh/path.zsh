@@ -11,3 +11,6 @@ export PATH=/Users/y.ueyama/Library/Android/sdk/platform-tools:$PATH
 export PATH=/usr/local/bin/ngrok:$PATH
 
 export PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+export FZF_BASE=/path/to/fzf/install/dir
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

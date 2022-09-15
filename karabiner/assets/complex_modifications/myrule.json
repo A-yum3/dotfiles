@@ -824,7 +824,7 @@
       ]
     },
     {
-      "description": "caps_lock and kana to delete_or_backspace",
+      "description": "caps_lock and return to delete_or_backspace",
       "manipulators": [
         {
           "description": "return = delete_or_backspace",
@@ -843,12 +843,6 @@
           "to": [
             {
               "key_code": "delete_or_backspace"
-            }
-          ],
-          "conditions": [
-            {
-              "type": "keyboard_type_if",
-              "keyboard_types": ["jis"]
             }
           ]
         }
