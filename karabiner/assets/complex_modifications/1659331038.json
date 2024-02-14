@@ -4327,7 +4327,7 @@
       "description": "Hyper Application",
       "manipulators": [
         {
-          "description": "command + e = finder",
+          "description": "command + e = slack",
           "type": "basic",
           "from": {
             "key_code": "e",
@@ -4343,7 +4343,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a finder"
+              "shell_command": "open -a Slack.app"
             }
           ]
         },
@@ -4369,7 +4369,7 @@
           ]
         },
         {
-          "description": "command + r = preview",
+          "description": "command + r = chrome",
           "type": "basic",
           "from": {
             "key_code": "r",
@@ -4385,7 +4385,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a Preview"
+              "shell_command": "open -a 'Google Chrome'"
             }
           ]
         },
@@ -4411,7 +4411,7 @@
           ]
         },
         {
-          "description": "command + t = typora",
+          "description": "command + t = obsidian",
           "type": "basic",
           "from": {
             "key_code": "t",
@@ -4427,7 +4427,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a Typora"
+              "shell_command": "open -a Obsidian.app"
             }
           ]
         },
@@ -4495,7 +4495,7 @@
           ]
         },
         {
-          "description": "command + f = Dash",
+          "description": "command + f = PHPStorm",
           "type": "basic",
           "from": {
             "key_code": "f",
@@ -4511,7 +4511,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a Dash"
+              "shell_command": "open -a PhpStorm.app"
             }
           ]
         },
@@ -4537,7 +4537,7 @@
           ]
         },
         {
-          "description": "command + g = Chrome",
+          "description": "command + g = Notion",
           "type": "basic",
           "from": {
             "key_code": "g",
@@ -4553,7 +4553,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Google Chrome'"
+              "shell_command": "open -a TickTick.app"
             }
           ]
         },

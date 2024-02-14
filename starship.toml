@@ -13,8 +13,8 @@ threshold = 10
 style = "bold red"
 
 [character]
-success_symbol = "[👍]()"
-error_symbol = "[👎]()"
+success_symbol = "[（  ˘꒳˘ ）φ](bold green)[ ❯ ](bold green)"
+error_symbol = "[（∩´﹏`∩）](bold red)"
 
 [directory]
 truncation_length = 10

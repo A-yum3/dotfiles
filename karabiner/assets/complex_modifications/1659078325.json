@@ -483,7 +483,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "non_us_pound",
+            "key_code": "backslash",
             "modifiers": {
               "optional": ["control", "option", "command"]
             }
@@ -509,7 +509,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "non_us_pound",
+            "key_code": "backslash",
             "modifiers": {
               "optional": ["control", "option", "command"],
               "mandatory": ["shift"]

@@ -1,0 +1,16 @@
+[user]
+	email = noikari73@gmail.com
+	name = A-yum3
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHRs1gH5FwzI4+BEBGiKG9A1ynUwL9tNjb4zYG80rlBb
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true

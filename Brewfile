@@ -1,10 +1,10 @@
-tap "aws/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-tap "songmu/tap"
-tap "yukiarrr/tap"
+tap "aws/tap"
+
 brew "act"
 brew "glib"
 brew "circleci"
@@ -35,20 +35,9 @@ brew "zinit"
 brew "aws/tap/aws-sam-cli"
 brew "songmu/tap/blogsync"
 brew "yukiarrr/tap/ecsk"
-cask "aquaskk"
-cask "blackhole-16ch"
-cask "devtoys"
-cask "fig"
-cask "keycastr"
-mas "Amphetamine", id: 937984704
-mas "GarageBand", id: 682658836
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+
+cask "appcleaner"
+
 mas "RunCat", id: 1429033973
 mas "ScreenPointer", id: 1368204906
-mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
-mas "Yoink", id: 457622435

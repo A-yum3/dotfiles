@@ -1,0 +1,10 @@
+nnoremap w [w
+nnoremap b [b
+
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set textobj-entire
+
+map <C-k> <A-n>
