@@ -61,7 +61,12 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# forMac
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# forWindows
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 #################################  HISTORY  #################################
@@ -111,13 +116,13 @@ setopt mark_dirs
 setopt auto_menu
 
 # スペルミス訂正
-setopt correct
+# setopt correct
 
 # コマンドラインでも # 以降をコメントと見なす
-setopt interactive_comments
+# setopt interactive_comments
 
 # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
-setopt magic_equal_subst
+# setopt magic_equal_subst
 
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
@@ -132,14 +137,14 @@ setopt auto_cd
 setopt no_beep
 
 # コマンドを途中まで入力後、historyから絞り込み
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
+# autoload -Uz history-search-end
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end history-search-end
+# bindkey "^P" history-beginning-search-backward-end
+# bindkey "^N" history-beginning-search-forward-end
 
 # Preztoのセットアップ
-zinit snippet PZT::modules/helper/init.zsh
+# zinit snippet PZT::modules/helper/init.zsh
 
 # # oh-my-zshのセットアップ
 # zinit snippet OMZL::git.zsh
@@ -152,18 +157,18 @@ zinit snippet PZT::modules/helper/init.zsh
 
 # Ctrl+x -> b
 # peco でディレクトリの移動履歴を表示
-bindkey '^xb' anyframe-widget-cdr
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
+# bindkey '^xb' anyframe-widget-cdr
+# autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+# add-zsh-hook chpwd chpwd_recent_dirs
 
 # Ctrl+x -> r
 # peco でコマンドの実行履歴を表示
-bindkey '^xr' anyframe-widget-execute-history
+# bindkey '^xr' anyframe-widget-execute-history
 
 # Ctrl+x -> Ctrl+b
 # peco でGitブランチを表示して切替え
-bindkey '^x^b' anyframe-widget-checkout-git-branch
+# bindkey '^x^b' anyframe-widget-checkout-git-branch
 
 # Ctrl+x -> g
 # GHQでクローンしたGitリポジトリを表示
-bindkey '^xg' anyframe-widget-cd-ghq-repository
+# bindkey '^xg' anyframe-widget-cd-ghq-repository

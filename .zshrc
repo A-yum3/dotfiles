@@ -21,20 +21,22 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-zinit light zsh-users/zsh-completions
+# zinit light zsh-users/zsh-completions
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zdharma-continuum/history-search-multi-word
 zinit light agkozak/zsh-z
 
 # Snippet
-zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
+# zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 
 SCRIPT_DIR=$HOME/dotfiles
 
-source $SCRIPT_DIR/zsh/plugins.zsh
+# source $SCRIPT_DIR/zsh/plugins.zsh
 source $SCRIPT_DIR/zsh/env.zsh
 source $SCRIPT_DIR/zsh/alias.zsh
 source $SCRIPT_DIR/zsh/path.zsh
 source $SCRIPT_DIR/zsh/config.zsh
 
 eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
