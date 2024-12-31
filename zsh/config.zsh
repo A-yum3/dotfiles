@@ -1,73 +1,15 @@
-#
-# Executes commands at login pre-zshrc.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# OSの判定
+case "$(uname -s)" in
+    Darwin*)
+      # forMac
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+        ;;
+    Linux*)
 
-#
-# Browser
-#
-
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-fi
-
-#
-# Editors
-#
-
-export EDITOR='nano'
-export VISUAL='nano'
-export PAGER='less'
-
-#
-# Language
-#
-
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
-
-#
-# Paths
-#
-
-# Ensure path arrays do not contain duplicates.
-typeset -gU cdpath fpath mailpath path
-
-# Set the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
-# Set the list of directories that Zsh searches for programs.
-path=(
-  /usr/local/{bin,sbin}
-  $path
-)
-
-#
-# Less
-#
-
-# Set the default Less options.
-# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
-# Remove -X and -F (exit if the content fits on one screen) to enable it.
-export LESS='-F -g -i -M -R -S -w -X -z-4'
-
-# Set the Less input preprocessor.
-# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
-
-# forMac
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# forWindows
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
+      # forWindows
+      eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+        ;;
+esac
 
 #################################  HISTORY  #################################
 # history
@@ -84,25 +26,6 @@ setopt hist_save_no_dups        # 重複するコマンドが保存されると�
 setopt extended_history         # コマンドのタイムスタンプをHISTFILEに記録する
 setopt hist_expire_dups_first   # HISTFILEのサイズがHISTSIZEを超える場合は、最初に重複を削除します
 
-
-# enable completion
-autoload -Uz compinit; compinit
-
-autoload -Uz colors; colors
-
-# Tabで選択できるように
-zstyle ':completion:*:default' menu select=2
-
-# 補完候補をそのまま→小文字を大文字→大文字を小文字に変更
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
-
-### 補完方法毎にグループ化する。
-zstyle ':completion:*' format '%B%F{blue}%d%f%b'
-zstyle ':completion:*' group-name ''
-
-# ファイル補完候補に色を付ける
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
 # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt auto_param_slash
 
@@ -116,13 +39,13 @@ setopt mark_dirs
 setopt auto_menu
 
 # スペルミス訂正
-# setopt correct
+setopt correct
 
 # コマンドラインでも # 以降をコメントと見なす
-# setopt interactive_comments
+setopt interactive_comments
 
 # コマンドラインの引数で --prefix=/usr などの = 以降でも補完できる
-# setopt magic_equal_subst
+setopt magic_equal_subst
 
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
@@ -135,40 +58,3 @@ setopt auto_cd
 
 # ビープ音を消す
 setopt no_beep
-
-# コマンドを途中まで入力後、historyから絞り込み
-# autoload -Uz history-search-end
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^P" history-beginning-search-backward-end
-# bindkey "^N" history-beginning-search-forward-end
-
-# Preztoのセットアップ
-# zinit snippet PZT::modules/helper/init.zsh
-
-# # oh-my-zshのセットアップ
-# zinit snippet OMZL::git.zsh
-# zinit snippet OMZP::git # <- なんかおまじないらしい
-# zinit cdclear -q
-
-# プロンプトのカスタマイズ
-# setopt promptsubst
-# zinit snippet OMZT::gnzh
-
-# Ctrl+x -> b
-# peco でディレクトリの移動履歴を表示
-# bindkey '^xb' anyframe-widget-cdr
-# autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-# add-zsh-hook chpwd chpwd_recent_dirs
-
-# Ctrl+x -> r
-# peco でコマンドの実行履歴を表示
-# bindkey '^xr' anyframe-widget-execute-history
-
-# Ctrl+x -> Ctrl+b
-# peco でGitブランチを表示して切替え
-# bindkey '^x^b' anyframe-widget-checkout-git-branch
-
-# Ctrl+x -> g
-# GHQでクローンしたGitリポジトリを表示
-# bindkey '^xg' anyframe-widget-cd-ghq-repository
